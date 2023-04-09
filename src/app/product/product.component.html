@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+      <h1>Products</h1>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product name" [(ngModel)]="newProduct.name">
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="Quantity" [(ngModel)]="newProduct.quantity">
+      </div>
+      <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.title }}</td>
+            <td>{{ product.category }}</td>
+
+           <td> <button class="btn btn-sm btn-primary" (click)="editProduct(product)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteProduct(product)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="editProductModalLabel">Edit Product</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Product name" [(ngModel)]="selectedProduct.name">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Quantity" [(ngModel)]="selectedProduct.quantity">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" (click)="updateProduct()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
