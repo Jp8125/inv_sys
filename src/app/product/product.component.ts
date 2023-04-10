@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import * as $ from 'jquery';
-import {Modal} from 'bootstrap'
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -32,23 +31,19 @@ export class ProductComponent implements OnInit {
   }
   editProduct(product: any): void {
     this.selectedProduct = { ...product };
-    const modalEl = document.getElementById('editProductModal');
-    setTimeout(() => {
-      const modal = new Modal(modalEl);
-      modal.show();
-    }, 0);
- 
+   $('#update').removeClass('d-none')
+   setTimeout(()=>{
+    $('#update').addClass('d-none')
+   },60000)
   }
-
   updateProduct(): void {
     this.productService.updateProduct(this.selectedProduct).subscribe(() => {
       const index = this.products.findIndex(p => p.id === this.selectedProduct.id);
       this.products[index] = { ...this.selectedProduct };
       this.selectedProduct = {};
-      
+      $('#update').addClass('d-none')
     });
   }
-
   deleteProduct(product: any): void {
     if (confirm(`Are you sure you want to delete ${product.title}?`)) {
       this.productService.deleteProduct(product).subscribe(() => {
