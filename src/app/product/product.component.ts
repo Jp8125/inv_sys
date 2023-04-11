@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
    $('#update').removeClass('d-none')
    setTimeout(()=>{
     $('#update').addClass('d-none')
-   },60000)
+   },30000)
   }
   updateProduct(): void {
     this.productService.updateProduct(this.selectedProduct).subscribe(() => {

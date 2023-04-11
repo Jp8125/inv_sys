@@ -7,12 +7,12 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly apiUrl = 'http://api.example.com/auth';
+  private readonly apiUrl = 'http://restapi.adequateshop.com/api/authaccount';
 
   constructor(private http: HttpClient) { }
 
-  authenticate(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password }).pipe(
+  authenticate(email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, { email, password }).pipe(
       tap((response: any) => localStorage.setItem('access_token', response.access_token))
     );
   }

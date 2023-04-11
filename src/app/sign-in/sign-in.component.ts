@@ -8,14 +8,16 @@ import { AuthService } from '../auth-service.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent {
-  username: string;
+  email: string;
   password: string;
 
   constructor(private authService: AuthService, private router: Router) { }
-
   signIn(): void {
-    this.authService.authenticate(this.username, this.password).subscribe(() => {
-      this.router.navigate(['/']);
+    this.authService.authenticate(this.email, this.password).subscribe(() => {
+      this.router.navigate(['/dashboard']);
     });
+    $('#dash').removeClass('d-none')
+    $('#prd').removeClass('d-none')
+
   }
 }
