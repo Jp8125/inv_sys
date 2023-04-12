@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   newUser: any = {};
   users: any[] = [];
-
   constructor(private register: RegiserService, private router: Router) {}
   addUser(): void {
     this.register.addUsers(this.newUser).subscribe(usr => {
+      console.log(usr);
       this.users.push(usr);
       this.newUser = {};
       this.router.navigate(['/dashboard'])
