@@ -9,10 +9,11 @@ import { ProductService } from './product.service';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
+import { RecentlyDeletedComponent } from './recently-deleted/recently-deleted.component';
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
-  declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent],
+  declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })

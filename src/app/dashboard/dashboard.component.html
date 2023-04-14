@@ -1,6 +1,10 @@
 <div class="row">
     <div class="col-md-12">
       <h1>Dashboard</h1>
+      <button class="btn btn-primary" (click)="get()">recently deleted</button>
+      <div *ngIf="val==1">
+        <app-recently-deleted [data]="dDash"></app-recently-deleted>
+      </div>
     </div>
   </div>
   
