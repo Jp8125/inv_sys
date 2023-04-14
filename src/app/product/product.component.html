@@ -18,6 +18,9 @@
       <div class="form-group my-2">
         <input type="text" class="form-control" placeholder="Category" [(ngModel)]="newProduct.category">
       </div>
+      <div class="form-group my-2">
+        <input type="number" class="form-control" placeholder="price" [(ngModel)]="newProduct.price">
+      </div>
       <div *ngIf="newProduct.title && newProduct.category" ><button class="btn btn-primary" (click)="addProduct()">Add Product</button></div>
       
     </div>
@@ -32,6 +35,9 @@
           <div class="form-group my-2">
             <input type="text" class="form-control" placeholder="Category" [(ngModel)]="selectedProduct.category">
           </div>
+          <div class="form-group my-2">
+            <input type="number" class="form-control" placeholder="price" [(ngModel)]="selectedProduct.price">
+          </div>
           <div class="d-flex justify-content-center">
             <button class="btn btn-warning text-light" (click)="updateProduct()">update</button>
           </div>
@@ -44,6 +50,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>category</th>
+            <th>Price</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -52,6 +59,7 @@
             <td>{{ product.id }}</td>
             <td>{{ product.title }}</td>
             <td>{{ product.category }}</td>
+            <td>{{ product.price*80 | currency:'INR'}}</td>
            <td><button class="btn btn-sm btn-primary me-3" (click)="editProduct(product)">Edit</button>
             <button class="btn btn-sm btn-danger" (click)="deleteProduct(product)">Delete</button></td>
           </tr>

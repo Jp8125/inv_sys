@@ -8,7 +8,7 @@ export class ObjectParserService {
   constructor() { }
   setObj(val){
     this.Obj=val;
-    alert(this.Obj)
+   
   }
   getObj()
   {
