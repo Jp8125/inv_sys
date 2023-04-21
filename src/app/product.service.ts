@@ -15,16 +15,17 @@ export class ProductService {
   }
 
   addProduct(product: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, product);
+    const url = `${this.apiUrl}`;
+    return this.http.post<any>(url, product,{ responseType: 'text' as 'json' });
   }
 
   updateProduct(product: any): Observable<any> {
-    const url = `${this.apiUrl}/:${product.id}`;
-    return this.http.put<any>(url, product);
+    const url = `${this.apiUrl}/${product.id}`;
+    return this.http.put<any>(url, product,{ responseType: 'text' as 'json' });
   }
 
   deleteProduct(product: any): Observable<any> {
-    const url = `${this.apiUrl}/:${product.id}`;
-    return this.http.delete<any>(url);
+    const url = `${this.apiUrl}/${product.id}`;
+    return this.http.delete<any>(url,{ responseType: 'text' as 'json' });
   }
 }
