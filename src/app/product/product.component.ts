@@ -44,8 +44,8 @@ export class ProductComponent implements OnInit {
     });
   }
   deleteProduct(product: any): void {
-    if (confirm(`Are you sure you want to delete ${product.title}?`)) {
-      this.productService.deleteProduct(product).subscribe(() => {
+    if (confirm(`Are you sure you want to delete ${product.name}?`)) {
+      this.productService.deleteProduct(product.id).subscribe(() => {
         const index = this.products.findIndex(p => p.id === product.id);
        this.products.splice(index, 1);
       });

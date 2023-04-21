@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  apiUrl = 'https://fakestoreapi.com/products';
+  apiUrl = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient) {}
 
@@ -19,12 +19,12 @@ export class ProductService {
   }
 
   updateProduct(product: any): Observable<any> {
-    const url = `${this.apiUrl}/${product.id}`;
+    const url = `${this.apiUrl}/:${product.id}`;
     return this.http.put<any>(url, product);
   }
 
   deleteProduct(product: any): Observable<any> {
-    const url = `${this.apiUrl}/${product.id}`;
+    const url = `${this.apiUrl}/:${product.id}`;
     return this.http.delete<any>(url);
   }
 }
