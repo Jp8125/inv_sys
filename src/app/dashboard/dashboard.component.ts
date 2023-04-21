@@ -9,6 +9,7 @@ import { ProductService } from '../product.service';
 export class DashboardComponent  implements OnInit {
   ngOnInit(): void {
     this.getProducts();
+    this.get()
   }
   dDash:any
   val:number=0
@@ -22,13 +23,15 @@ export class DashboardComponent  implements OnInit {
   getProducts(): void {
     this.productService.getProducts().subscribe(products => {
       this.products = products;
+      this.calc()
+
     });
   }
 
   calc(){
    
     for (const val of this.products) {
-      this.revenue+=(val.price*80)
+      this.revenue+=(val.price*val.quantity)
     }
 
   }

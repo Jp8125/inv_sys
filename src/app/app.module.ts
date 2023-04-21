@@ -11,10 +11,11 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { RecentlyDeletedComponent } from './recently-deleted/recently-deleted.component';
 import { HeaderComponent } from './header/header.component';
+import { AddComponent } from './product/add/add.component';
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
-  declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent, HeaderComponent],
+  declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent, HeaderComponent, AddComponent],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })

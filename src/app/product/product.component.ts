@@ -21,14 +21,6 @@ export class ProductComponent implements OnInit {
       this.products = products;
     });
   }
-
-  addProduct(): void {
-    this.productService.addProduct(this.newProduct).subscribe(product => {
-      this.products.push(product);
-      this.newProduct = {};
-      this.getProducts();
-    });
-  }
   editProduct(product: any): void {
     this.selectedProduct = { ...product };
    $('#update').removeClass('d-none')
