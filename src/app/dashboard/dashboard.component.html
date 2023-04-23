@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-12">
       <h1 class="text-center p-2">Dashboard</h1>
-      <div class="container border p-5 d-flex justify-content-center">
+      <div class="container border p-5 d-flex flex-wrap justify-content-center">
         <div>
           
           <div *ngIf="val==1">
             <app-recently-deleted [data]="dDash"></app-recently-deleted>
           </div>
         </div>
-        <div class="ms-5">
+        <div class="ms-md-4 ms-lg-5">
           <div *ngIf="revenue!=0">
             <div class="card mt-2 bg-success text-white" style="width:18rem;">
               <div class="card-body p-5">
