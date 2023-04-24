@@ -13,11 +13,15 @@ import { RecentlyDeletedComponent } from './recently-deleted/recently-deleted.co
 import { HeaderComponent } from './header/header.component';
 import { AddComponent } from './product/add/add.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { BarChartComponent } from './dashboard/bar-chart/bar-chart.component';
+
+
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
-  declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent, HeaderComponent, AddComponent, LandingPageComponent],
+  declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent, HeaderComponent,
+     AddComponent, LandingPageComponent, BarChartComponent],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

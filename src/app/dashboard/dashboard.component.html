@@ -1,14 +1,14 @@
 <h1 class="text-center p-2 headings">Dashboard</h1>
 <main class="bg-white-300 flex-1 p-3 overflow-hidden">
-  <!-- Stats Row Starts Here -->
-  
-  <div class="container">
-    <!-- Card Sextion Starts Here -->
-    
+    <!-- Stats Row Starts Here -->
+
+    <div class="container">
+        <!-- Card Sextion Starts Here -->
+
         <div class="d-flex flex-wrap justify-content-between flex-col md:flex-row lg:flex-row mx-2">
             <div class="shadow-lg bg-red-vibrant  mb-2 p-2 ">
                 <div class="p-4 flex flex-col">
-                  <h5 class="card-title text-primary">{{revenue|currency:'INR'}}</h5>
+                    <h5 class="card-title text-primary">{{revenue|currency:'INR'}}</h5>
                     <h5 class="text-primary mt-4">
                         Total Revenue
                     </h5>
@@ -17,87 +17,47 @@
 
             <div class="shadow bg-info  mb-2 p-2 ">
                 <div class="p-4">
-                  <h5 class="card-title text-white ">{{cost|currency:'INR'}}</h5>
-                  <h5 class="text-white  mt-4">
-                      Total cost
-                  </h5>
+                    <h5 class="card-title text-white ">{{cost|currency:'INR'}}</h5>
+                    <h5 class="text-white  mt-4">
+                        Total cost
+                    </h5>
                 </div>
             </div>
 
             <div class="shadow bg-warning  mb-2 p-2 ">
                 <div class="p-4 flex flex-col">
-                <h5 class="text-success">
+                    <h5 class="text-success">
                         900
-                </h5>
+                    </h5>
                     <h5 class="text-success mt-4">
                         Total Users
-                    </h5 >
+                    </h5>
                 </div>
             </div>
 
             <div class="shadow bg-success border-l-8  mb-2 p-2 ">
                 <div class="p-4 flex flex-col">
-                    <h5 class="text-warning">
-                        500
+                    <h5 class="text-warning text-center">
+                        {{total}}
                     </h5>
                     <h5 class="text-warning mt-4">
                         Total Products
                     </h5>
                 </div>
             </div>
-     
-                <div *ngIf="val==1" class="shadow bg-primary  mb-2 p-2">
-                  <app-recently-deleted [data]="dDash"></app-recently-deleted>
-                </div>
-              </div>        
+
+            <div *ngIf="val==1" class="shadow bg-primary  mb-2 p-2">
+                <app-recently-deleted [data]="dDash"></app-recently-deleted>
+            </div>
+        </div>
 
 
         <!-- /Stats Row Ends Here -->
-
- 
+        <div class="container justify-content-center mt-3">
+            <app-bar-chart></app-bar-chart>
+        </div>
         <!-- /Cards Section Ends Here -->
 
-        <!-- Progress Bar -->
-        <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 mt-2">
-            <div class="rounded overflow-hidden shadow bg-white mx-2 w-full pt-2">
-                <div class="px-6 py-2 border-b border-light-grey">
-                    <div class="font-bold text-xl">Progress Among Projects</div>
-                </div>
-                <div class="">
-                    <div class="w-full">
-
-                        <div class="shadow w-full bg-grey-light">
-                            <div class="bg-blue-500 text-xs leading-none py-1 text-center text-white"
-                                 style="width: 45%">45%
-                            </div>
-                        </div>
-
-
-                        <div class="shadow w-full bg-grey-light mt-2">
-                            <div class="bg-teal-500 text-xs leading-none py-1 text-center text-white"
-                                 style="width: 55%">55%
-                            </div>
-                        </div>
-
-
-                        <div class="shadow w-full bg-grey-light mt-2">
-                            <div class="bg-orange-500 text-xs leading-none py-1 text-center text-white"
-                                 style="width: 65%">65%
-                            </div>
-                        </div>
-
-
-                        <div class="shadow w-full bg-grey-300 mt-2">
-                            <div class="bg-red-800 text-xs leading-none py-1 text-center text-white"
-                                 style="width: 75%">75%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Profile Tabs-->
-      
         <!--/Profile Tabs-->
     </div>
 </main>

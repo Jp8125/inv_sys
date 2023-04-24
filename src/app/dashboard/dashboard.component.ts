@@ -10,12 +10,14 @@ export class DashboardComponent  implements OnInit {
   ngOnInit(): void {
     this.getProducts();
     this.get()
+    
   }
   dDash:any
   val:number=0
   products:any[]
   revenue:number=0
   cost:number=0
+  total:number=0
   constructor(private pass:ObjectParserService,private productService:ProductService){}
   get(){
     this.dDash=this.pass.getObj()
@@ -31,8 +33,9 @@ export class DashboardComponent  implements OnInit {
   }
 
   calc(){
-   
+
     for (const val of this.products) {
+      this.total+=val.quantity;
       this.revenue+=(val.price*val.quantity)
     }
    this.cost=this.revenue-this.revenue*0.20
