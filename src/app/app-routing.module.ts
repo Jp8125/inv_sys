@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { AddComponent } from './product/add/add.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 const routes: Routes = [
-  {path:'',redirectTo:'/sign-in',pathMatch: 'full'},
+  {path:'',redirectTo:'/home',pathMatch: 'full'},
   {path:'home',component:LandingPageComponent},
   { path: 'sign-in', component:SignInComponent},
   { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard] },

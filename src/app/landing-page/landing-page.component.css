@@ -43,3 +43,8 @@ section {
    .into{
     color: #883bed;
    }
+   .btn:hover{
+    background-color:  #883bed;
+    box-shadow: 10em;
+    color: #f9f9f9;
+   }

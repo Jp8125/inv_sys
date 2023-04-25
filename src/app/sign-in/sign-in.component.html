@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-center p-5">
-  <div class="p-5 border">
-    <h1 class="mb-1">Sign In</h1>
+  <div class="rounded p-5 shadow">
+    <h1 class="mb-3" style="color: #883bed;">Sign In</h1>
     <form (ngSubmit)="signIn()">
       <div class="row">
         <label for="email" class="col">Email:</label>
@@ -10,7 +10,8 @@
         <label for="password" class="col">Password:</label>
         <input type="password" id="password" name="password" [(ngModel)]="password" required class="col-8">
       </div>
-      <div class="container d-flex justify-content-around mt-2"><button type="submit" class="btn btn-primary">Sign In</button><button (click)="redirect()">register</button></div>
+      <div class="container d-flex justify-content-around mt-4"><button type="submit" class="btn btn-primary">Sign In</button>
+        <button (click)="redirect()" class="btn btn-info">register</button></div>
     </form>
   </div>
   </div>
