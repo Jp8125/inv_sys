@@ -11,7 +11,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { RecentlyDeletedComponent } from './recently-deleted/recently-deleted.component';
 import { HeaderComponent } from './header/header.component';
-import { AddComponent } from './product/add/add.component';
+import {  AddProductComponent } from './product/add/add.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BarChartComponent } from './dashboard/bar-chart/bar-chart.component';
 
@@ -20,7 +20,7 @@ import { BarChartComponent } from './dashboard/bar-chart/bar-chart.component';
 @NgModule({
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent, HeaderComponent,
-     AddComponent, LandingPageComponent, BarChartComponent],
+     AddProductComponent, LandingPageComponent, BarChartComponent],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })

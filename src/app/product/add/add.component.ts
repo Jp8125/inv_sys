@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/product.service';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
-export class AddComponent {
+export class AddProductComponent {
   newProduct: any = {};
   products:Array<any>;
   message:string;
