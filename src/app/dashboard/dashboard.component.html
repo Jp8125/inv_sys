@@ -1,24 +1,63 @@
-<div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center p-2">Dashboard</h1>
-      <div class="container border p-5 d-flex justify-content-center">
-        <div>
-          <div class="d-flex justify-content-center"><button class="btn btn-primary" (click)="get()">recently deleted</button></div>
-          <div *ngIf="val==1">
-            <app-recently-deleted [data]="dDash"></app-recently-deleted>
-          </div>
-        </div>
-        <div class="ms-5">
-          <div class="d-flex justify-content-center"><button class="btn btn-primary" (click)="calc()">Total Earnings</button></div>
-          <div *ngIf="revenue!=0">
-            <div class="card mt-2" style="width:18rem;">
-              <div class="card-body p-5">
-                <h5 class="card-title">{{revenue|currency:'INR'}}</h5>
-              </div>
+<h1 class="text-center p-2 headings">Dashboard</h1>
+<main class="bg-white-300 flex-1 p-3 overflow-hidden">
+    <!-- Stats Row Starts Here -->
+
+    <div class="container">
+        <!-- Card Sextion Starts Here -->
+
+        <div class="d-flex flex-wrap justify-content-between flex-col md:flex-row lg:flex-row mx-2">
+            <div class="shadow-lg bg-red-vibrant  mb-2 p-2 ">
+                <div class="p-4 flex flex-col">
+                    <h5 class="card-title text-primary">{{revenue|currency:'INR'}}</h5>
+                    <h5 class="text-primary mt-4">
+                        Total Revenue
+                    </h5>
+                </div>
             </div>
-          </div>
+
+            <div class="shadow bg-info  mb-2 p-2 ">
+                <div class="p-4">
+                    <h5 class="card-title text-white ">{{cost|currency:'INR'}}</h5>
+                    <h5 class="text-white  mt-4">
+                        Total cost
+                    </h5>
+                </div>
+            </div>
+
+            <div class="shadow bg-warning  mb-2 p-2 ">
+                <div class="p-4 flex flex-col">
+                    <h5 class="text-success">
+                        900
+                    </h5>
+                    <h5 class="text-success mt-4">
+                        Total Users
+                    </h5>
+                </div>
+            </div>
+
+            <div class="shadow bg-success border-l-8  mb-2 p-2 ">
+                <div class="p-4 flex flex-col">
+                    <h5 class="text-warning text-center">
+                        {{total}}
+                    </h5>
+                    <h5 class="text-warning mt-4">
+                        Total Products
+                    </h5>
+                </div>
+            </div>
+
+            <div *ngIf="val==1" class="shadow bg-primary  mb-2 p-2">
+                <app-recently-deleted [data]="dDash"></app-recently-deleted>
+            </div>
         </div>
-      </div>
+
+
+        <!-- /Stats Row Ends Here -->
+        <div class="container justify-content-center mt-3">
+            <app-bar-chart></app-bar-chart>
+        </div>
+        <!-- /Cards Section Ends Here -->
+
+        <!--/Profile Tabs-->
     </div>
-  </div>
-  
+</main>

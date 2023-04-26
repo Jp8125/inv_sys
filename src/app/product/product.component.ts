@@ -21,13 +21,6 @@ export class ProductComponent implements OnInit {
       this.products = products;
     });
   }
-
-  addProduct(): void {
-    this.productService.addProduct(this.newProduct).subscribe(product => {
-      this.products.push(product);
-      this.newProduct = {};
-    });
-  }
   editProduct(product: any): void {
     this.selectedProduct = { ...product };
    $('#update').removeClass('d-none')
@@ -44,7 +37,8 @@ export class ProductComponent implements OnInit {
     });
   }
   deleteProduct(product: any): void {
-    if (confirm(`Are you sure you want to delete ${product.title}?`)) {
+    if (confirm(`Are you sure you want to delete ${product.id}?`)) {
+      console.log(typeof product.id)
       this.productService.deleteProduct(product).subscribe(() => {
         const index = this.products.findIndex(p => p.id === product.id);
        this.products.splice(index, 1);

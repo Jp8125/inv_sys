@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-center my-4  headings">Add Product</h1>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Product name"   [(ngModel)]="newProduct.name">
+    </div>
+    <div class="form-group my-2">
+      <input type="text" class="form-control" placeholder="Category" [(ngModel)]="newProduct.description">
+    </div>
+    <div class="form-group my-2">
+      <input type="number" class="form-control" placeholder="price" [(ngModel)]="newProduct.price">
+    </div>
+    <div class="form-group my-2">
+      <input type="number" class="form-control" placeholder="Quantity" [(ngModel)]="newProduct.quantity">
+    </div>
+    <div *ngIf="newProduct.name && newProduct.description" ><button class="btn" id="btn" (click)="addProduct()">Add Product</button></div>
+</div>

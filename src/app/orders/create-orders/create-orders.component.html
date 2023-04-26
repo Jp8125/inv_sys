@@ -1,0 +1,24 @@
+<h2>Create Order</h2>
+<form (submit)="createOrder()">
+  <label for="customerName">Customer Name:</label>
+  <input type="text" id="customerName" [(ngModel)]="customerName" required name="customerName">
+
+  <label for="customerEmail">Customer Email:</label>
+  <input type="email" id="customerEmail" [(ngModel)]="customerEmail" required  name="customerEmail">
+
+  <button type="submit">Create Order</button>
+</form>
+
+<h2>Add Item to Order</h2>
+<form (submit)="addItemToOrder()">
+  <label for="orderId">Order ID:</label>
+  <input type="number" id="orderId" name="orderId" [(ngModel)]="orderId" required>
+
+  <label for="productId">Product ID:</label>
+  <input type="number" id="productId" name="productId" [(ngModel)]="productId" required>
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" required>
+
+  <button type="submit">Add Item to Order</button>
+</form>
