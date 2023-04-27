@@ -12,7 +12,7 @@ export class HeaderComponent {
   title = 'inv_sys';
   log_out(){
     this.authService.logout()
-    this.router.navigate(['/sign-in']);
+    this.router.navigate(['/home']);
 
   }
   get Status(){
