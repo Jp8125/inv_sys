@@ -15,4 +15,7 @@ export class HeaderComponent {
     this.router.navigate(['/sign-in']);
 
   }
+  get Status(){
+    return this.authService.isLoggedIn()
+  }
 }

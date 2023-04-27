@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { AddProductComponent } from './product/add/add.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CreateOrdersComponent } from './orders/create-orders/create-orders.component';
+import { OrdersComponent } from './orders/orders.component';
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch: 'full'},
   {path:'home',component:LandingPageComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'products', component: ProductComponent ,canActivate:[AuthGuard] },
   { path: 'register', component: RegisterComponent },
   {path:'add',component:AddProductComponent},
-  {path:'orders',component:CreateOrdersComponent}
+  {path:'orders',component:CreateOrdersComponent},
+  {path:'order-list',component:OrdersComponent}
 ];
 
 @NgModule({

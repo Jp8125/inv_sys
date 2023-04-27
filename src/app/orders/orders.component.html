@@ -1,1 +1,12 @@
-<p>orders works!</p>
+<h3 class="text-center mt-2">Customers</h3>
+<div class="container d-flex flex-wrap justify-content-center mt-2 p-2">
+    
+    <ng-container *ngFor="let item of orders">
+        <div class="card bg-white shadow mx-2 my-2" style="border-color: #883bed;">
+            <div class="card-body">
+                <h4 class="card-title">Name:{{item.customer_name}}</h4>
+                <p class="card-text">Email:{{item.customer_email}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

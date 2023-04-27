@@ -15,8 +15,7 @@ export class SignInComponent {
   signIn(): void {
     this.authService.authenticate(this.username, this.password).subscribe(() => {
       this.router.navigate(['/dashboard']);
-      $('#dash').removeClass('d-none')
-      $('#prd').removeClass('d-none')
+     
     });
   
   }

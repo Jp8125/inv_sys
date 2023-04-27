@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjectParserService } from '../object-parser.service';
 import { ProductService } from '../product.service';
+import { OrderService } from '../orders.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,15 +11,18 @@ export class DashboardComponent  implements OnInit {
   ngOnInit(): void {
     this.getProducts();
     this.get()
+    this.getConsumers()
     
   }
   dDash:any
   val:number=0
   products:any[]
   revenue:number=0
+  customers:any[]
   cost:number=0
   total:number=0
-  constructor(private pass:ObjectParserService,private productService:ProductService){}
+  countcustomer:number=0
+  constructor(private pass:ObjectParserService,private productService:ProductService,private orservice:OrderService){}
   get(){
     this.dDash=this.pass.getObj()
     console.log(this.dDash)
@@ -30,6 +34,7 @@ export class DashboardComponent  implements OnInit {
       this.calc()
       
     });
+ 
   }
 
   calc(){
@@ -39,5 +44,11 @@ export class DashboardComponent  implements OnInit {
       this.revenue+=(val.price*val.quantity)
     }
    this.cost=this.revenue-this.revenue*0.20
+  }
+  getConsumers(){
+    this.orservice.getAllOrders().subscribe(orders => {
+      this.customers=orders as any[]
+      this.countcustomer=this.customers.length
+    })
   }
 }
