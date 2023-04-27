@@ -57,7 +57,22 @@
             <app-bar-chart></app-bar-chart>
         </div>
         <!-- /Cards Section Ends Here -->
-
+        <div class="shadow bg-white border  border-l-8  mb-2 p-2 mt-3">
+           <h2 class="text-center text-warning mb-3">Product Needed to Restock</h2>
+           <div class="d-flex justify-content-around">
+            <div class="shadow bg-danger text-white  mb-2 p-2 " *ngFor="let item of restock">
+                <div class="p-4 flex flex-col">
+                    <h5 class="text-center">
+                        Name:{{item.name}}
+                    </h5>
+                    <h5 class="text-center my-2">
+                        Quantity:{{item.quantity}}
+                    </h5>
+                    <p class="text-center">Description:{{item.description}}</p>
+                </div>
+            </div>
+           </div>
+        </div>
         <!--/Profile Tabs-->
     </div>
 </main>

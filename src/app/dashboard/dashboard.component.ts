@@ -22,16 +22,19 @@ export class DashboardComponent  implements OnInit {
   cost:number=0
   total:number=0
   countcustomer:number=0
+  restock:Array<any>
   constructor(private pass:ObjectParserService,private productService:ProductService,private orservice:OrderService){}
   get(){
     this.dDash=this.pass.getObj()
-    console.log(this.dDash)
+    
     this.val=1
   }
   getProducts(): void {
     this.productService.getProducts().subscribe(products => {
       this.products = products;
       this.calc()
+      this.restock=this.products.filter(Object=>Object.quantity<10)
+      console.log(this.restock);
       
     });
  
