@@ -14,7 +14,7 @@ export class RegisterComponent {
     this.register.addUsers(this.newUser).subscribe(usr => {
       this.users.push(usr);
       this.newUser = {};
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/sign-in'])
     });
   }
 }

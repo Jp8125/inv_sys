@@ -7,13 +7,13 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly apiUrl = 'https://fakestoreapi.com/auth';
+  private readonly apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  authenticate(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, {username, password }).pipe(
-      tap((response: any) => localStorage.setItem('access_token', response.access_token))
+  authenticate(email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, {email, password }).pipe(
+      tap((response: any) => localStorage.setItem('access_token', response.tk))
     );
   }
   logout(): void {
