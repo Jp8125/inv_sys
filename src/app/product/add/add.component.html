@@ -1,16 +1,43 @@
 <div class="container">
-  <h1 class="text-center my-4  headings">Add Product</h1>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Product name"   [(ngModel)]="newProduct.name">
+  <h1 class="text-center my-4 headings">Add Product</h1>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Product name" required minlength="4"
+      [(ngModel)]="newProduct.name" #name="ngModel" />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+      <small class="text-danger" *ngIf="name.errors?.['required']">
+        Name is required.
+      </small>
+      <small class="text-danger" *ngIf="name.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </small>
     </div>
     <div class="form-group my-2">
-      <input type="text" class="form-control" placeholder="Category" [(ngModel)]="newProduct.description">
+      <input type="text" class="form-control" placeholder="Description" required [(ngModel)]="newProduct.description"
+        #des="ngModel" />
+      <div *ngIf="des.invalid && (des.dirty || des.touched)" class="alert">
+        <small class="text-center text-danger my-4" *ngIf="des.errors?.['required']">*Description required</small>
+      </div>
     </div>
     <div class="form-group my-2">
-      <input type="number" class="form-control" placeholder="price" [(ngModel)]="newProduct.price">
+      <input type="number" class="form-control" placeholder="price" [(ngModel)]="newProduct.price" required min="1" #price="ngModel" />
+      <div>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert">
+          <small class="text-center text-danger my-4" *ngIf="price.errors?.['required']">*Price required</small>
+          <small class="text-center text-danger my-4" *ngIf="price.errors?.['min']">*Price should more then 0</small>
+        </div>
+      </div>
     </div>
     <div class="form-group my-2">
-      <input type="number" class="form-control" placeholder="Quantity" [(ngModel)]="newProduct.quantity">
+      <input type="number" class="form-control" placeholder="Quantity" [(ngModel)]="newProduct.quantity" required min="1" #quanitity="ngModel" />
+      <div *ngIf="quanitity.invalid && (quanitity.dirty || quanitity.touched)" class="alert">
+        <small class="text-center text-danger my-4" *ngIf="quanitity.errors?.['required']">*quanitity required</small>
+        <small class="text-center text-danger my-4" *ngIf="quanitity.errors?.['min']">*quanitity should more then 0</small>
+      </div>
     </div>
-    <div *ngIf="newProduct.name && newProduct.description" ><button class="btn" id="btn" (click)="addProduct()">Add Product</button></div>
+    <div class="text-center">
+      <button class="btn" id="btn" (click)="addProduct()" [disabled]="name.invalid || price.invalid || quanitity.invalid || des.invalid ">
+        Add Product
+      </button>
+    </div>
+  </div>
 </div>
