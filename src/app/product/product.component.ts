@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import * as $ from 'jquery';
 import { ObjectParserService } from '../object-parser.service';
 @Component({
   selector: 'app-product',
@@ -11,6 +10,7 @@ export class ProductComponent implements OnInit {
   products: any[] = [];
   newProduct: any = {};
   selectedProduct: any = {};
+  remove:string='d-none'
   constructor(private productService: ProductService,private pass:ObjectParserService) {}
   ngOnInit(): void {
     this.getProducts();
@@ -23,9 +23,9 @@ export class ProductComponent implements OnInit {
   }
   editProduct(product: any): void {
     this.selectedProduct = { ...product };
-   $('#update').removeClass('d-none')
+  this.remove=""
    setTimeout(()=>{
-    $('#update').addClass('d-none')
+   this.remove="d-none"
    },20000)
   }
   updateProduct(): void {
@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
       const index = this.products.findIndex(p => p.id === this.selectedProduct.id);
       this.products[index] = { ...this.selectedProduct };
       this.selectedProduct = {};
-      $('#update').addClass('d-none')
+      this.remove="d-none";
     });
   }
   deleteProduct(product: any): void {

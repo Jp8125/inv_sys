@@ -16,13 +16,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BarChartComponent } from './dashboard/bar-chart/bar-chart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CreateOrdersComponent } from './orders/create-orders/create-orders.component';
+import { FooterComponent } from './footer/footer.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   declarations: [AppComponent, DashboardComponent, ProductComponent, SignInComponent, RegisterComponent, RecentlyDeletedComponent, HeaderComponent,
-     AddProductComponent, LandingPageComponent, BarChartComponent, OrdersComponent, CreateOrdersComponent],
+     AddProductComponent, LandingPageComponent, BarChartComponent, OrdersComponent, CreateOrdersComponent, FooterComponent, AboutusComponent],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })

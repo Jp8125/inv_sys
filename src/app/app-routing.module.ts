@@ -9,6 +9,7 @@ import { AddProductComponent } from './product/add/add.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CreateOrdersComponent } from './orders/create-orders/create-orders.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch: 'full'},
   {path:'home',component:LandingPageComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   {path:'add',component:AddProductComponent},
   {path:'orders',component:CreateOrdersComponent},
-  {path:'order-list',component:OrdersComponent}
+  {path:'order-list',component:OrdersComponent},
+  {path:'about-us',component:AboutusComponent}
 ];
 
 @NgModule({

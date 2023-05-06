@@ -13,9 +13,9 @@ export class SignInComponent {
 
   constructor(private authService: AuthService, private router: Router) { }
   signIn(): void {
-    this.authService.authenticate(this.username, this.password).subscribe(() => {
+    this.authService.authenticate(this.username, this.password).subscribe((p) => {
+      console.log(p);
       this.router.navigate(['/dashboard']);
-     
     });
   
   }

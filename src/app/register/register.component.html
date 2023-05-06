@@ -4,18 +4,27 @@
       <h1 class="mb-4">Register </h1>
       <form (ngSubmit)="addUser()" class="form-group">
         <div class="row">
-          <label for="email" class="col-sm-2">Name:</label>
-          <input type="email" id="email" name="username" [(ngModel)]=" newUser.name" required class="col-sm-10 form-control">
+          <label for="username" class="col-sm-2">Name:</label>
+          <input type="text" id="username" name="username" [(ngModel)]=" newUser.name" required #var1="ngModel" class="col-sm-10 form-control">
+          <div *ngIf="var1.invalid && (var1.dirty || var1.touched)" class="alert">
+            <small class="text-center text-danger my-4" *ngIf="var1.errors?.['required']">*name required</small>
+          </div>
         </div>
         <div class="row my-3">
           <label for="email" class="col-sm-2">Email:</label>
-          <input type="email" id="email" name="username" [(ngModel)]=" newUser.email" required class="col-sm-10 form-control">
+          <input type="email" id="email" name="email" [(ngModel)]=" newUser.email" required #email="ngModel" class="col-sm-10 form-control">
+         <div  *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+          <small class="text-center text-danger my-4" *ngIf="email.errors?.['required']">*email required</small>
+         </div>
         </div>
         <div class="row">
           <label for="password" class="col-sm-2">Password:</label>
-          <input type="password" id="password" name="password" [(ngModel)]=" newUser.password" required class="col-sm-10 form-control">
+          <input type="password" id="password" name="password" [(ngModel)]=" newUser.password" #var3="ngModel" required class="col-sm-10 form-control">
+          <div *ngIf="var3.invalid && (var3.dirty || var3.touched)" class="alert">
+            <small class="text-center text-danger my-4" *ngIf="var3.errors?.['required']">*Password required</small>
+          </div>
         </div>
-        <div class="container d-flex justify-content-center mt-4"><button type="submit" class="btn btn-primary">Register</button></div>
+        <div class="container d-flex justify-content-center mt-4"><button type="submit" [disabled]="var1.invalid || email.invalid || var3.invalid" class="btn btn-primary">Register</button></div>
       </form>
     </div>
     </div>

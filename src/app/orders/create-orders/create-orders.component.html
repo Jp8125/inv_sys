@@ -1,15 +1,23 @@
-<h2>Create Order</h2>
-<form (submit)="createOrder()">
-  <label for="customerName">Customer Name:</label>
-  <input type="text" id="customerName" [(ngModel)]="customerName" required name="customerName">
+<h2 class="text-center my-4">Create Order</h2>
+<div class="d-flex justify-content-center p-5">
 
-  <label for="customerEmail">Customer Email:</label>
-  <input type="email" id="customerEmail" [(ngModel)]="customerEmail" required  name="customerEmail">
+  <form (submit)="createOrder()" class="form-group shadow p-5">
+    <div>
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" class="form-control"  [(ngModel)]="customerName" required name="customerName">
+    </div>
+    <div class="my-5">
+      <label for="customerEmail">Customer Email:</label>
+      <input type="email" id="customerEmail" class="form-control" [(ngModel)]="customerEmail" required  name="customerEmail">
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-success text-white" type="submit">Create Order</button>
+    </div>
+  </form>
+</div>
 
-  <button type="submit">Create Order</button>
-</form>
-
-<h2>Add Item to Order</h2>
+<!-- <h2>Add Item to Order</h2>
 <form (submit)="addItemToOrder()">
   <label for="orderId">Order ID:</label>
   <input type="number" id="orderId" name="orderId" [(ngModel)]="orderId" required>
@@ -21,4 +29,4 @@
   <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" required>
 
   <button type="submit">Add Item to Order</button>
-</form>
+</form> -->
