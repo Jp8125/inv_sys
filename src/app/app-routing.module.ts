@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard] },
   { path: 'products', component: ProductComponent ,canActivate:[AuthGuard] },
   { path: 'register', component: RegisterComponent },
-  {path:'add',component:AddProductComponent},
-  {path:'orders',component:CreateOrdersComponent},
-  {path:'order-list',component:OrdersComponent},
+  {path:'add',component:AddProductComponent,canActivate:[AuthGuard]},
+  {path:'orders',component:CreateOrdersComponent,canActivate:[AuthGuard]},
+  {path:'order-list',component:OrdersComponent,canActivate:[AuthGuard]},
   {path:'about-us',component:AboutusComponent}
 ];
 
